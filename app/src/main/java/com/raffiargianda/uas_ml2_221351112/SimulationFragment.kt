@@ -216,17 +216,17 @@ class SimulationFragment : Fragment() {
         when (level) {
             0 -> {
                 cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_low))
-                txtDialogResult.text = "Hasil Prediksi: Rendah"
+                txtDialogResult.text = "Hasil Prediksi Terkena Kanker : Rendah, Pertahankan Kesehatan Kamu Ya!!!!!"
                 imgStatus.setImageResource(R.drawable.ic_good)
             }
             1 -> {
                 cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_medium))
-                txtDialogResult.text = "Hasil Prediksi: Sedang"
+                txtDialogResult.text = "Hasil Prediksi Terkena Kanker : Sedang, Aduhhh Jaga Kesehatan Mu Ya!!!!"
                 imgStatus.setImageResource(R.drawable.ic_warning)
             }
             2 -> {
                 cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_high))
-                txtDialogResult.text = "Hasil Prediksi: Tinggi"
+                txtDialogResult.text = "Hasil Prediksi Terkena Kanker: Tinggi, Waduh Bahaya Nih, Coba Cek Kesehatan Mu Segera!!!"
                 imgStatus.setImageResource(R.drawable.ic_error)
             }
             else -> {
