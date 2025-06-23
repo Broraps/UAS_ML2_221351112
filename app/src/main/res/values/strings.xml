@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">UAS_ML2_221351112</string>
+    <string name="app_logo">INI STRING</string>
+
+    <string name="deskription_about">Kanker paru-paru adalah penyebab utama kematian akibat kanker di seluruh dunia, terhitung 1,59 juta kematian pada tahun 2018.Mayoritas kasus kanker paru disebabkan oleh kebiasaan merokok, tetapi paparan polusi udara juga merupakan faktor risiko. Sebuah studi baru telah menemukan bahwa polusi udara dapat dikaitkan dengan peningkatan risiko kanker paru-paru, bahkan pada orang yang bukan perokok.\nStudi yang dipublikasikan dalam jurnal Nature Medicine ini mengamati data lebih dari 462.000 orang di Cina yang diikuti selama rata-rata enam tahun. Para peserta dibagi menjadi dua kelompok: mereka yang tinggal di daerah dengan tingkat polusi udara yang tinggi dan mereka yang tinggal di daerah dengan tingkat polusi udara yang rendah.\nPara peneliti menemukan bahwa orang-orang dalam kelompok polusi tinggi lebih mungkin terkena kanker paru-paru daripada mereka yang berada dalam kelompok polusi rendah. Mereka juga menemukan bahwa risikonya lebih tinggi pada orang yang bukan perokok daripada perokok, dan risikonya meningkat seiring bertambahnya usia.\nMeskipun penelitian ini tidak membuktikan bahwa polusi udara menyebabkan kanker paru-paru, namun penelitian ini menunjukkan bahwa mungkin ada hubungan antara keduanya. Penelitian lebih lanjut diperlukan untuk mengkonfirmasi temuan ini dan untuk menentukan apa pengaruh berbagai jenis dan tingkat polusi udara terhadap risiko kanker paru-paru.</string>
+    <string name="how_works">
+        Membuat model klasifikasi menggunakan machine learning berbasis TensorFlow dan TFLite. Membangun antarmuka pengguna menggunakan Streamlit dengan input interaktif dan hasil yang mudah dipahami. Menggunakan dataset historis dengan fitur gaya hidup dan kesehatan untuk pelatihan model, seperti usia, kebiasaan merokok, riwayat keluarga, dsb.
+    </string>
+    <string name="deskription_dataset">
+        Dataset ini berisi informasi tentang pasien dengan kanker paru-paru, termasuk usia, jenis kelamin, paparan polusi udara, penggunaan alkohol, alergi debu, bahaya kerja, risiko genetik, penyakit paru-paru kronis, pola makan seimbang, obesitas, status merokok, status perokok pasif, nyeri dada, batuk darah, tingkat kelelahan, penurunan berat badan, sesak napas, mengi, kesulitan menelan, pembengkakan kuku jari, sering pilek, batuk kering, dan mendengkur. Dengan menganalisis data ini, kita dapat mendapatkan wawasan tentang apa yang menyebabkan kanker paru-paru dan bagaimana cara terbaik untuk mengobatinya.
+    </string>
+    <string name="age">Usia: Usia pasien. (Numerik)</string>
+    <string name="gender">Jenis Kelamin: Jenis kelamin pasien. (Kategorik)</string>
+    <string name="polution">Polusi Udara: Tingkat paparan polusi udara pasien. (Kategorik)</string>
+    <string name="alkohol">Penggunaan alkohol: Tingkat penggunaan alkohol pasien. (Kategorikal)</string>
+    <string name="alergic">Alergi Debu: Tingkat alergi debu pasien. (Kategorikal)</string>
+    <string name="dangerous_work">Bahaya Pekerjaan: Tingkat bahaya pekerjaan pasien. (Kategorikal)</string>
+    <string name="gen_risk">Risiko Genetik: Tingkat risiko genetik pasien. (Kategorikal)</string>
+    <string name="lung_cronis">Penyakit Paru Kronis: Tingkat penyakit paru-paru kronis pasien. (Kategorikal)</string>
+    <string name="diet">Diet Seimbang: Tingkat diet seimbang pasien. (Kategorikal)</string>
+    <string name="obesity">Obesitas: Tingkat obesitas pasien. (Kategorikal)</string>
+    <string name="smoking">Merokok: Tingkat merokok pasien. (Kategorikal)</string>
+    <string name="pasif_smok">Perokok Pasif: Tingkat perokok pasif pasien. (Kategorikal)</string>
+    <string name="chest_pain">Nyeri Dada: Tingkat nyeri dada pasien. (Kategorikal)</string>
+    <string name="blood_cough">Batuk Darah: Tingkat batuk darah pasien. (Kategorikal)</string>
+    <string name="tiring">Kelelahan: Tingkat kelelahan pasien. (Kategorikal)</string>
+    <string name="loss_weight">Penurunan Berat Badan: Tingkat penurunan berat badan pasien. (Kategorikal)</string>
+    <string name="sesak">Sesak Napas: Tingkat sesak napas pasien. (Kategorikal)</string>
+    <string name="mengi">Mengi: Tingkat mengi pasien. (Kategorikal)</string>
+    <string name="kesulitan_menelan">Kesulitan Menelan: Tingkat kesulitan menelan pasien. (Kategorikal)</string>
+    <string name="menggiti_jari">Menggigiti Kuku Jari: Tingkat menggigiti kuku jari pasien. (Kategorikal)</string>
+    <string name="frequent_cold">Sering Pilek: Tingkat Keseringan Pilek (Kategorikal)</string>
+    <string name="dry_cough">Batuk Kering: Tingkat Keparahan Batuk Kering (Kategorikal)</string>
+    <string name="snoring">Mendengkur: Tingkat Mendengkur (Kategorikal)</string>
+    <string name="deskription_model">
+        Arsitektur model yang digunakan dalam aplikasi ini adalah sebuah Artificial Neural Network (ANN) yang terdiri dari beberapa lapisan (layers).
+        Model ANN yang digunakan dikembangkan menggunakan pustaka Tensorflow dan keras. Model ini dilatih untuk memprediksi hasil berdasarkan dataset yang telah dibersihkan dan diporses sebelumnya
+    </string>
+    <string name="data_transform">
+        Kolom index dan Patient Id dihapus dari dataset. Kolom-kolom ini tidak relevan untuk prediksi karena hanya berfungsi sebagai pengidentifikasi unik dan tidak memberikan informasi pola.
+    </string>
+    <string name="data_transform_sub">
+        - Penghapusan Kolom index dan Patient Id dihapus dari dataset. Kolom-kolom ini tidak relevan untuk prediksi karena hanya berfungsi sebagai pengidentifikasi unik dan tidak memberikan informasi pola.\n
+        - Semua fitur numerik (kolom selain Level) diskalakan menggunakan MinMaxScaler. Tujuan dari MinMaxScaler adalah mengubah skala setiap fitur sehingga nilainya berada dalam rentang antara 0 dan 1. Ini penting untuk model ANN agar fitur dengan rentang nilai yang besar tidak mendominasi proses pembelajaran.\n
+        - Kolom target Level yang berisi nilai kategorikal (Low, Medium, High) diubah menjadi nilai numerik integer menggunakan LabelEncoder.\n
+        - Fitur (X): Didefinisikan sebagai semua kolom dalam dataset setelah menghapus kolom Level. Variabel X berisi semua faktor risiko yang akan digunakan untuk membuat prediksi (usia, polusi udara, merokok, dll).\n
+        - Label (y): Didefinisikan sebagai kolom Level saja. Variabel y adalah apa yang ingin diprediksi oleh model (tingkat risiko kanker paru-paru).
+    </string>
+    <string name="modelling">
+        - train_test_split adalah sebuah fungsi dari pustaka scikit-learn di Python yang digunakan untuk membagi dataset menjadi dua subset: data latih (training set) dan data uji (test set)\n
+        - Stadarisasi data yang sudah di split menggunakan MinMaxScaler
+    </string>
+    <string name="modelling_ann">
+        - Kompilasi Model: Sebelum pelatihan, model perlu dikompilasi dengan beberapa konfigurasi: \n
+        - Optimizer: adam digunakan sebagai optimizer. Adam adalah algoritma optimasi yang efisien dan umum digunakan untuk memperbarui bobot (weights) model selama pelatihan.\n
+        - Loss Function: sparse_categorical_crossentropy dipilih sebagai fungsi kerugian. Fungsi ini cocok untuk masalah klasifikasi multi-kelas di mana label targetnya adalah integer (seperti hasil dari LabelEncoder).\n
+        - Metrics: accuracy digunakan sebagai metrik untuk memantau performa model selama pelatihan dan evaluasi.
+    </string>
+    <string name="modelling_ann2">
+        - Model dilatih menggunakan metode model.fit() pada data latih (X_train, y_train).\n
+        - Pelatihan dilakukan sebanyak 50 epoch, yang berarti model akan melihat keseluruhan data latih sebanyak 50 kali.\n
+        - Early Stopping: Mekanisme EarlyStopping digunakan untuk menghentikan pelatihan jika tidak ada peningkatan pada val_loss (loss pada data validasi) selama 5 epoch berturut-turut (patience=5). Ini membantu mencegah overfitting.\n
+        - Data Validasi: Selama pelatihan, 20% dari data latih (validation_split=0.2) disisihkan sebagai data validasi untuk memantau performa model pada setiap epoch.
+    </string>
+    <string name="eda_1">
+        Dataset ini terbagi hampir rata dengan masing masing tingkat resiko kanker paru paru untuk Low = 30,30%, Medium = 33,20% dan high = 36,50%. Dengan begitu dalam dataset ini akan lebih banyak data dengan resiko kanker paru paru High
+    </string>
+    <string name="eda_2">
+        Data menunjukkan bahwa semakin banyak mengkonsumsi Alkohol akan semakin kesulitan untuk menelan
+    </string>
+    <string name="eda_3">
+        Dataset ini menunjukan bahwa wanita di setiap tingkatan resiko kanker paru paru lebih tinggi kecuali Low, data membuktikan bahwa wantia lebih beresiko terkena kanker paru paru
+    </string>
+    <string name="eda_4">
+        Data Menunjukan bahwa : \ n
+        - Data Level Low = Banyak umur pada rentang 20 dan 30\n
+        - Data Level Medium = Banyak umur pada rentang 30 dan 40\n
+        - Data Level High = Banyak umur pada rentang 30 dan 40, menunjukan bahwa umur tersebut memiliki tingkat resiko yang tinggi\n
+    </string>
+    <string name="eda_5">
+        Pada data heatmap ini menunjukan bahwa, jika memiliki keturunan terkena kanker paru paru akan semakin meningkat resiko pada orang keturunannya
+    </string>
+</resources>

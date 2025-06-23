@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/aboutFragment"
+        android:icon="@drawable/ic_info"
+        android:title="Tentang" />
+
+    <item
+        android:id="@id/featuresFragment"
+        android:icon="@drawable/ic_features"
+        android:title="Fitur" />
+
+    <item
+        android:id="@id/architectureFragment"
+        android:icon="@drawable/ic_architecture"
+        android:title="Arsitektur" />
+
+    <item
+        android:id="@id/simulationFragment"
+        android:icon="@drawable/ic_simulation"
+        android:title="Simulasi" />
+
+</menu>

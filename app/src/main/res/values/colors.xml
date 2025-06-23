@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="health_primary">#00BCD4</color>
+    <color name="health_primary_dark">#26C6DA</color>
+    <color name="health_accent">#4DD0E1</color>
+    <color name="health_light">#80DEEA</color>
+    <color name="health_background">#B2EBF2</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="result_low">#4CAF50</color>
+    <color name="result_medium">#FFC107</color>
+    <color name="result_high">#F44336</color>
+    <color name="dark_background_secondary">#5A5A5A</color>
+    <!-- Primary Palette -->
+    <color name="brand_teal">#00BFA5</color>
+    <color name="brand_teal_dark">#008E76</color>
+
+    <!-- Dark Theme Palette -->
+    <color name="dark_background_primary">#1A1C20</color> <!-- Latar belakang utama -->
+
+    <!-- Text Colors -->
+    <color name="text_primary_dark">#F0F0F0</color> <!-- Untuk judul -->
+    <color name="text_secondary_dark">#A0A0A0</color> <!-- Untuk deskripsi/label -->
+
+    <!-- Gradient Button Colors -->
+    <color name="gradient_start">#00BFA5</color>
+    <color name="gradient_end">#00A896</color>
+
+    <!-- Prediction Result Colors -->
+</resources>
