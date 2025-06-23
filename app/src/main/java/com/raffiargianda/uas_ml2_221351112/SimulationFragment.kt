@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
@@ -119,22 +120,14 @@ class SimulationFragment : Fragment() {
     }
 
     private fun displayResult(resultCode: Int) {
-        val (resultText, resultColor) = when (resultCode) {
-            0 -> "Hasil Prediksi: Rendah" to ContextCompat.getColor(requireContext(), R.color.result_low)
-            1 -> "Hasil Prediksi: Sedang" to ContextCompat.getColor(requireContext(), R.color.result_medium)
-            2 -> "Hasil Prediksi: Tinggi" to ContextCompat.getColor(requireContext(), R.color.result_high)
-            else -> "Hasil Tidak Diketahui" to ContextCompat.getColor(requireContext(), R.color.dark_background_secondary)
-        }
-
         activity?.runOnUiThread {
-            this.resultText.text = resultText
-            this.resultCard.setCardBackgroundColor(resultColor)
+            showResultDialog(resultCode)
         }
     }
 
+
+
     private fun initializeViews(view: View) {
-        resultCard = view.findViewById(R.id.resultCard)
-        resultText = view.findViewById(R.id.txtResult)
         checkButton = view.findViewById(R.id.btnCheck)
         edtAge = view.findViewById(R.id.edtAge)
         radioGroupGender = view.findViewById(R.id.radioGroupGender)
@@ -207,4 +200,44 @@ class SimulationFragment : Fragment() {
         val declaredLength = fileDescriptor.declaredLength
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
     }
+
+    private fun showResultDialog(level: Int) {
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.result_dialog, null)
+        val dialogBuilder = androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+
+        val dialog = dialogBuilder.create()
+        dialog.window?.attributes?.windowAnimations = R.style.DialogAnimation
+
+        val cardContainer = dialogView.findViewById<CardView>(R.id.cardContainer)
+        val txtDialogResult = dialogView.findViewById<TextView>(R.id.txtDialogResult)
+        val imgStatus = dialogView.findViewById<ImageView>(R.id.imgStatus)
+
+        when (level) {
+            0 -> {
+                cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_low))
+                txtDialogResult.text = "Hasil Prediksi: Rendah"
+                imgStatus.setImageResource(R.drawable.ic_good)
+            }
+            1 -> {
+                cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_medium))
+                txtDialogResult.text = "Hasil Prediksi: Sedang"
+                imgStatus.setImageResource(R.drawable.ic_warning)
+            }
+            2 -> {
+                cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_high))
+                txtDialogResult.text = "Hasil Prediksi: Tinggi"
+                imgStatus.setImageResource(R.drawable.ic_error)
+            }
+            else -> {
+                cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.dark_background_secondary))
+                txtDialogResult.text = "Hasil Tidak Diketahui"
+                imgStatus.setImageResource(R.drawable.ic_warning)
+            }
+        }
+
+        dialog.show()
+    }
+
+
 }

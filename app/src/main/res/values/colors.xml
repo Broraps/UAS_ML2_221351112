@@ -14,20 +14,20 @@
     <color name="result_medium">#FFC107</color>
     <color name="result_high">#F44336</color>
     <color name="dark_background_secondary">#5A5A5A</color>
-    <!-- Primary Palette -->
     <color name="brand_teal">#00BFA5</color>
     <color name="brand_teal_dark">#008E76</color>
 
-    <!-- Dark Theme Palette -->
-    <color name="dark_background_primary">#1A1C20</color> <!-- Latar belakang utama -->
+    <color name="dark_background_primary">#1A1C20</color>
 
-    <!-- Text Colors -->
-    <color name="text_primary_dark">#F0F0F0</color> <!-- Untuk judul -->
-    <color name="text_secondary_dark">#A0A0A0</color> <!-- Untuk deskripsi/label -->
+    <color name="text_primary_dark">#F0F0F0</color>
+    <color name="text_secondary_dark">#A0A0A0</color>
 
-    <!-- Gradient Button Colors -->
     <color name="gradient_start">#00BFA5</color>
     <color name="gradient_end">#00A896</color>
 
-    <!-- Prediction Result Colors -->
+    <color name="level_low">#4CAF50</color>
+    <color name="level_medium">#FFC107</color>
+    <color name="level_high">#F44336</color>
+
+
 </resources>
