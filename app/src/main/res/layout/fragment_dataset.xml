@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/card_bg"
     android:orientation="vertical"
-    tools:context=".AboutFragment">
+    tools:context=".DatasetFragment">
 
     <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/brand_teal"
         android:padding="16dp"
-        android:text="Tentang Aplikasi"
+        android:text="Dataset"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -46,7 +47,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="Storyline"
+                        android:text="Deskripsi"
                         android:textColor="@color/brand_teal_dark"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -56,10 +57,11 @@
                         android:layout_height="wrap_content"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="5dp"
-                        android:text="@string/deskription_about"
+                        android:text="@string/deskription_dataset"
                         android:textColor="@color/dark_background_primary"
                         android:textSize="14sp" />
                 </LinearLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -73,70 +75,35 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:text="Cara Kerja"
+                        android:paddingStart="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="Tabel Dataset"
                         android:textColor="@color/brand_teal_dark"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:justificationMode="inter_word"
-                        android:lineSpacingExtra="5dp"
-                        android:text="@string/how_works"
-                        android:textColor="@color/dark_background_primary"
-                        android:textSize="14sp" />
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableLayout
+                            android:id="@+id/tableLayoutDataset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp" />
+
+                    </HorizontalScrollView>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:lineSpacingExtra="6dp"
-                        android:text="Dibuat oleh:"
-                        android:textColor="@color/dark_background_primary"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        android:text="Raffi Argianda - 221351112"
-                        android:textColor="@color/dark_background_primary"
-                        android:textStyle="bold"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:id="@+id/tvDatasetLink"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Link Dataset"
-                        android:textColor="@color/brand_teal"
-                        android:textStyle="bold"
-                        android:textSize="16sp" />
-                </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
 </LinearLayout>

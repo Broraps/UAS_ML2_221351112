@@ -28,6 +28,7 @@
     <color name="level_low">#4CAF50</color>
     <color name="level_medium">#FFC107</color>
     <color name="level_high">#F44336</color>
+    <color name="card_bg">#F3F3F3</color>
 
 
 </resources>

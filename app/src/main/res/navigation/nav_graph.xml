@@ -16,6 +16,13 @@
         app:popEnterAnim="@anim/nav_default_enter_anim"
         app:popExitAnim="@anim/nav_default_exit_anim" />
     <action
+        android:id="@+id/action_homePageFragment_to_datasetFragment"
+        app:destination="@id/datasetFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_exit_anim" />
+    <action
         android:id="@+id/action_homePageFragment_to_featuresFragment"
         app:destination="@id/featuresFragment"
         app:enterAnim="@anim/nav_default_enter_anim"
@@ -43,6 +50,11 @@
         android:name="com.raffiargianda.uas_ml2_221351112.AboutFragment"
         android:label="Tentang Aplikasi"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/datasetFragment"
+        android:name="com.raffiargianda.uas_ml2_221351112.DatasetFragment"
+        android:label="Dataset"
+        tools:layout="@layout/fragment_dataset" />
     <fragment
         android:id="@+id/featuresFragment"
         android:name="com.raffiargianda.uas_ml2_221351112.FeaturesFragment"

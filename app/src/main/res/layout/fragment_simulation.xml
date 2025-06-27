@@ -1,57 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/health_background"
+    android:background="@color/card_bg"
+    android:orientation="vertical"
     tools:context=".SimulationFragment">
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_teal"
         android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:text="Simulasi Prediksi"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="32dp">
+            android:padding="16dp">
 
-            <!-- Judul -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Simulasi Prediksi Kesehatan"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Deskripsi -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Geser slider di bawah untuk mengatur nilai masing-masing fitur, lalu tekan tombol untuk melakukan prediksi."
-                android:textSize="14sp"
+                android:text="Isi semua parameter di bawah ini untuk melihat hasil prediksi risiko kanker paru-paru."
                 android:textColor="@color/dark_background_primary"
-                android:gravity="center"
-                android:layout_marginBottom="24dp" />
+                android:textSize="14sp" />
 
-            <!-- Bungkus semua input ke dalam CardView -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
                 android:layout_marginBottom="24dp"
-                app:cardBackgroundColor="@android:color/white">
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -59,33 +53,32 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Umur -->
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp">
+                        android:layout_marginBottom="16dp"
+                        android:hint="Umur">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edtAge"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Umur"
                             android:inputType="number"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Gender -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
                         android:text="Gender"
-                        android:textStyle="bold"
+                        android:textColor="@color/dark_background_primary"
                         android:textSize="16sp" />
                     <RadioGroup
                         android:id="@+id/radioGroupGender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="12dp">
+                        android:layout_marginBottom="16dp">
                         <RadioButton
                             android:id="@+id/radioPria"
                             android:layout_width="wrap_content"
@@ -96,89 +89,103 @@
                             android:id="@+id/radioWanita"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
                             android:text="Wanita"/>
                     </RadioGroup>
 
-                    <TextView android:id="@+id/tvAirPollutionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Polusi Udara (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderAirPollution" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <TextView
+                        android:id="@+id/tvAirPollutionLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Polusi Udara (1-8): 4"
+                        android:textColor="@color/dark_background_primary"
+                        android:textSize="16sp" />
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderAirPollution"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stepSize="1.0"
+                        android:value="4.0"
+                        android:valueFrom="1.0"
+                        android:valueTo="8.0"
+                        android:layout_marginBottom="12dp"
+                        app:thumbColor="@color/brand_teal"
+                        app:trackColorActive="@color/brand_teal"
+                        app:trackColorInactive="@color/health_light"/>
 
-                    <TextView android:id="@+id/tvAlcoholUseLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Penggunaan Alkohol (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderAlcoholUse" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <TextView android:id="@+id/tvAlcoholUseLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Penggunaan Alkohol (1-8): 4" android:textColor="@color/dark_background_primary" android:textSize="16sp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderAlcoholUse" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
-                    <TextView android:id="@+id/tvDustAllergyLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alergi Debu (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderDustAllergy" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <TextView android:id="@+id/tvDustAllergyLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alergi Debu (1-8): 4" android:textColor="@color/dark_background_primary" android:textSize="16sp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderDustAllergy" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvOccuPationalHazardsLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bahaya Pekerjaan (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderOccuPationalHazards" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderOccuPationalHazards" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvGeneticRiskLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Risiko Genetik (1-7): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderGeneticRisk" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderGeneticRisk" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvChronicLungDiseaseLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Penyakit Paru Kronis (1-7): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderChronicLungDisease" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
-
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderChronicLungDisease" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvBalancedDietLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Diet Seimbang (1-7): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderBalancedDiet" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderBalancedDiet" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvObesityLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Obesitas (1-7): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderObesity" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderObesity" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvSmokingLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Merokok (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderSmoking" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
-
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderSmoking" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvPassiveSmokerLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perokok Pasif (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderPassiveSmoker" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderPassiveSmoker" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvChestPainLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nyeri Dada (1-9): 5" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderChestPain" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderChestPain" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvCoughingOfBloodLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Batuk Darah (1-9): 5" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderCoughingOfBlood" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderCoughingOfBlood" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvFatigueLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kelelahan (1-9): 5" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderFatigue" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderFatigue" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvWeightLossLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Penurunan Berat Badan (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderWeightLoss" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderWeightLoss" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvShortnessOfBreathLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sesak Napas (1-9): 5" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderShortnessOfBreath" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderShortnessOfBreath" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvWheezingLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mengi (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderWheezing" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderWheezing" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvSwallowingDifficultyLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kesulitan Menelan (1-8): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderSwallowingDifficulty" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderSwallowingDifficulty" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="8.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvClubbingOfFingerNailsLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kuku Jari Tabuh (1-9): 5" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderClubbingOfFingerNails" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderClubbingOfFingerNails" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="9.0" android:stepSize="1.0" android:value="5.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvFrequentColdLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sering Pilek (1-7): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderFrequentCold" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderFrequentCold" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvDryCoughLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Batuk Kering (1-7): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderDryCough" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderDryCough" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                     <TextView android:id="@+id/tvSnoringLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mendengkur (1-7): 4" android:textStyle="bold"/>
-                    <com.google.android.material.slider.Slider android:id="@+id/sliderSnoring" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp"/>
-
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderSnoring" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="1.0" android:valueTo="7.0" android:stepSize="1.0" android:value="4.0" android:layout_marginBottom="12dp" app:thumbColor="@color/brand_teal" app:trackColorActive="@color/brand_teal" app:trackColorInactive="@color/health_light"/>
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCheck"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="60dp"
                 android:text="Prediksi Sekarang"
                 android:textAllCaps="false"
-                android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@android:color/white"
-                android:backgroundTint="@color/brand_teal"
-                android:background="@drawable/gradient_button_background" />
+                app:backgroundTint="@color/brand_teal"
+                app:cornerRadius="16dp" />
+
         </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

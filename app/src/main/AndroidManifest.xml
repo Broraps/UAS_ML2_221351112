@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/lung_crisis"
-        android:label="@string/app_name"
+        android:label="Lung Cancer Prediction"
         android:roundIcon="@drawable/lung"
         android:supportsRtl="true"
         android:theme="@style/Theme.UAS_ML2_221351112"

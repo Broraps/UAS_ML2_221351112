@@ -11,7 +11,7 @@ class FiturAdapter(private val daftarFitur: List<Fitur>) :
     RecyclerView.Adapter<FiturAdapter.FiturViewHolder>() {
 
     class FiturViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvDeskripsi: TextView = view.findViewById(R.id.tvFiturDeskripsi)
+        val tvDeskripsi: TextView = view.findViewById(R.id.tvFitur)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FiturViewHolder {

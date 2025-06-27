@@ -9,29 +9,32 @@
     <string name="deskription_dataset">
         Dataset ini berisi informasi tentang pasien dengan kanker paru-paru, termasuk usia, jenis kelamin, paparan polusi udara, penggunaan alkohol, alergi debu, bahaya kerja, risiko genetik, penyakit paru-paru kronis, pola makan seimbang, obesitas, status merokok, status perokok pasif, nyeri dada, batuk darah, tingkat kelelahan, penurunan berat badan, sesak napas, mengi, kesulitan menelan, pembengkakan kuku jari, sering pilek, batuk kering, dan mendengkur. Dengan menganalisis data ini, kita dapat mendapatkan wawasan tentang apa yang menyebabkan kanker paru-paru dan bagaimana cara terbaik untuk mengobatinya.
     </string>
-    <string name="age">Usia: Usia pasien. (Numerik)</string>
-    <string name="gender">Jenis Kelamin: Jenis kelamin pasien. (Kategorik)</string>
-    <string name="polution">Polusi Udara: Tingkat paparan polusi udara pasien. (Kategorik)</string>
-    <string name="alkohol">Penggunaan alkohol: Tingkat penggunaan alkohol pasien. (Kategorikal)</string>
-    <string name="alergic">Alergi Debu: Tingkat alergi debu pasien. (Kategorikal)</string>
-    <string name="dangerous_work">Bahaya Pekerjaan: Tingkat bahaya pekerjaan pasien. (Kategorikal)</string>
-    <string name="gen_risk">Risiko Genetik: Tingkat risiko genetik pasien. (Kategorikal)</string>
-    <string name="lung_cronis">Penyakit Paru Kronis: Tingkat penyakit paru-paru kronis pasien. (Kategorikal)</string>
-    <string name="diet">Diet Seimbang: Tingkat diet seimbang pasien. (Kategorikal)</string>
-    <string name="obesity">Obesitas: Tingkat obesitas pasien. (Kategorikal)</string>
-    <string name="smoking">Merokok: Tingkat merokok pasien. (Kategorikal)</string>
-    <string name="pasif_smok">Perokok Pasif: Tingkat perokok pasif pasien. (Kategorikal)</string>
-    <string name="chest_pain">Nyeri Dada: Tingkat nyeri dada pasien. (Kategorikal)</string>
-    <string name="blood_cough">Batuk Darah: Tingkat batuk darah pasien. (Kategorikal)</string>
-    <string name="tiring">Kelelahan: Tingkat kelelahan pasien. (Kategorikal)</string>
-    <string name="loss_weight">Penurunan Berat Badan: Tingkat penurunan berat badan pasien. (Kategorikal)</string>
-    <string name="sesak">Sesak Napas: Tingkat sesak napas pasien. (Kategorikal)</string>
-    <string name="mengi">Mengi: Tingkat mengi pasien. (Kategorikal)</string>
-    <string name="kesulitan_menelan">Kesulitan Menelan: Tingkat kesulitan menelan pasien. (Kategorikal)</string>
-    <string name="menggiti_jari">Menggigiti Kuku Jari: Tingkat menggigiti kuku jari pasien. (Kategorikal)</string>
-    <string name="frequent_cold">Sering Pilek: Tingkat Keseringan Pilek (Kategorikal)</string>
-    <string name="dry_cough">Batuk Kering: Tingkat Keparahan Batuk Kering (Kategorikal)</string>
-    <string name="snoring">Mendengkur: Tingkat Mendengkur (Kategorikal)</string>
+    <string name="age">
+        Usia: Usia pasien. (Numerik) \n
+        Tipe Data : Int64 \n
+        Bentuk Nilai Fitur : Numerik</string>
+    <string name="gender">Jenis Kelamin: Jenis kelamin pasien. (Kategorik)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="polution">Polusi Udara: Tingkat paparan polusi udara pasien. (Kategorik)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="alkohol">Penggunaan alkohol: Tingkat penggunaan alkohol pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="alergic">Alergi Debu: Tingkat alergi debu pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="dangerous_work">Bahaya Pekerjaan: Tingkat bahaya pekerjaan pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="gen_risk">Risiko Genetik: Tingkat risiko genetik pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="lung_cronis">Penyakit Paru Kronis: Tingkat penyakit paru-paru kronis pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="diet">Diet Seimbang: Tingkat diet seimbang pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="obesity">Obesitas: Tingkat obesitas pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="smoking">Merokok: Tingkat merokok pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="pasif_smok">Perokok Pasif: Tingkat perokok pasif pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="chest_pain">Nyeri Dada: Tingkat nyeri dada pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="blood_cough">Batuk Darah: Tingkat batuk darah pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="tiring">Kelelahan: Tingkat kelelahan pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="loss_weight">Penurunan Berat Badan: Tingkat penurunan berat badan pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="sesak">Sesak Napas: Tingkat sesak napas pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="mengi">Mengi: Tingkat mengi pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="kesulitan_menelan">Kesulitan Menelan: Tingkat kesulitan menelan pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="menggiti_jari">Menggigiti Kuku Jari: Tingkat menggigiti kuku jari pasien. (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="frequent_cold">Sering Pilek: Tingkat Keseringan Pilek (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="dry_cough">Batuk Kering: Tingkat Keparahan Batuk Kering (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br> </string>
+    <string name="snoring">Mendengkur: Tingkat Mendengkur (Kategorikal)<br>Tipe Data : Int64</br><br>Bentuk Nilai Fitur : Numerik</br></string>
     <string name="deskription_model">
         Arsitektur model yang digunakan dalam aplikasi ini adalah sebuah Artificial Neural Network (ANN) yang terdiri dari beberapa lapisan (layers).
         Model ANN yang digunakan dikembangkan menggunakan pustaka Tensorflow dan keras. Model ini dilatih untuk memprediksi hasil berdasarkan dataset yang telah dibersihkan dan diporses sebelumnya
@@ -79,5 +82,10 @@
     </string>
     <string name="eda_5">
         Pada data heatmap ini menunjukan bahwa, jika memiliki keturunan terkena kanker paru paru akan semakin meningkat resiko pada orang keturunannya
+    </string>
+
+    <string name="deksripsi_dataset">
+        Dataset terdiri dari 26 kolom dan 1000 baris yang ditampilkan pada list dibawah, Kumpulan data yang dipertimbangkan mencakup banyak informasi sebagai faktor faktor utama seperti usia, jenis kelamin, paparan polusi udara, konsumsi alkohol, alergi debu, bahaya pekerjaan, risiko genetik, penyakit paru kronis, diet seimbang, obesitas, status merokok, status perokok pasif, nyeri dada, batuk berdarah, tingkat kelelahan, penurunan berat badan, sesak napas, mengi, kesulitan menelan, kuku jari terkatup, sering masuk angin, batuk kering, dan mendengkur.\n
+        Data ini sangat penting untuk membuat keputusan yang dapat sadar terhadap kesehatan paru paru dan menjauhkan dari resiko terhadap kanker paru paru tersebut.
     </string>
 </resources>
