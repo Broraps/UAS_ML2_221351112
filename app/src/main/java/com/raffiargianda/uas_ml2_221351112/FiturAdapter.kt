@@ -1,6 +1,6 @@
 package com.raffiargianda.uas_ml2_221351112
 
-import android.text.Html
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,9 +24,23 @@ class FiturAdapter(private val daftarFitur: List<Fitur>) :
         val fitur = daftarFitur[position]
         val nomor = position + 1
 
-        val teksLengkap = "<b>$nomor). ${fitur.deskripsi}</b>"
-        holder.tvDeskripsi.text = Html.fromHtml(teksLengkap, Html.FROM_HTML_MODE_LEGACY)
-    }
+        val deskripsi = fitur.deskripsi
+        val baris = deskripsi.split("\n")
 
+        val judul = "$nomor). ${baris.first()}\n"
+        val sisa = baris.drop(1).joinToString("\n")
+
+        val finalText = judul + sisa
+
+        val spannable = android.text.SpannableString(finalText)
+        spannable.setSpan(
+            android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
+            0,
+            judul.length,
+            android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        holder.tvDeskripsi.text = spannable
+    }
     override fun getItemCount() = daftarFitur.size
 }
