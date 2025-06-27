@@ -103,21 +103,41 @@ class SimulationFragment : Fragment() {
         displayResult(result)
     }
 
+    private fun minMaxScale(value: Float, min: Float, max: Float): Float {
+        return (value - min) / (max - min)
+    }
+
     private fun gatherRawInputs(ageText: String): FloatArray {
-        val ageValue = ageText.toFloat()
-        val genderValue = if (radioGroupGender.checkedRadioButtonId == R.id.radioWanita) 2.0f else 1.0f
+        val age = ageText.toFloat()
+        val gender = if (radioGroupGender.checkedRadioButtonId == R.id.radioWanita) 2.0f else 1.0f
 
         return floatArrayOf(
-            ageValue, genderValue, sliderAirPollution.value, sliderAlcoholUse.value,
-            sliderDustAllergy.value, sliderOccuPationalHazards.value, sliderGeneticRisk.value,
-            sliderChronicLungDisease.value, sliderBalancedDiet.value, sliderObesity.value,
-            sliderSmoking.value, sliderPassiveSmoker.value, sliderChestPain.value,
-            sliderCoughingOfBlood.value, sliderFatigue.value, sliderWeightLoss.value,
-            sliderShortnessOfBreath.value, sliderWheezing.value, sliderSwallowingDifficulty.value,
-            sliderClubbingOfFingerNails.value, sliderFrequentCold.value, sliderDryCough.value,
-            sliderSnoring.value
+            minMaxScale(age, 14f, 73f),
+            minMaxScale(gender, 1f, 2f),
+            minMaxScale(sliderAirPollution.value, 1f, 8f),
+            minMaxScale(sliderAlcoholUse.value, 1f, 8f),
+            minMaxScale(sliderDustAllergy.value, 1f, 8f),
+            minMaxScale(sliderOccuPationalHazards.value, 1f, 8f),
+            minMaxScale(sliderGeneticRisk.value, 1f, 7f),
+            minMaxScale(sliderChronicLungDisease.value, 1f, 7f),
+            minMaxScale(sliderBalancedDiet.value, 1f, 7f),
+            minMaxScale(sliderObesity.value, 1f, 7f),
+            minMaxScale(sliderSmoking.value, 1f, 8f),
+            minMaxScale(sliderPassiveSmoker.value, 1f, 8f),
+            minMaxScale(sliderChestPain.value, 1f, 9f),
+            minMaxScale(sliderCoughingOfBlood.value, 1f, 9f),
+            minMaxScale(sliderFatigue.value, 1f, 9f),
+            minMaxScale(sliderWeightLoss.value, 1f, 8f),
+            minMaxScale(sliderShortnessOfBreath.value, 1f, 9f),
+            minMaxScale(sliderWheezing.value, 1f, 8f),
+            minMaxScale(sliderSwallowingDifficulty.value, 1f, 8f),
+            minMaxScale(sliderClubbingOfFingerNails.value, 1f, 9f),
+            minMaxScale(sliderFrequentCold.value, 1f, 7f),
+            minMaxScale(sliderDryCough.value, 1f, 7f),
+            minMaxScale(sliderSnoring.value, 1f, 7f)
         )
     }
+
 
     private fun displayResult(resultCode: Int) {
         activity?.runOnUiThread {
@@ -214,17 +234,17 @@ class SimulationFragment : Fragment() {
         val imgStatus = dialogView.findViewById<ImageView>(R.id.imgStatus)
 
         when (level) {
-            0 -> {
+            1 -> {
                 cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_low))
                 txtDialogResult.text = "Hasil Prediksi Terkena Kanker : Rendah, Pertahankan Kesehatan Kamu Ya!!!!!"
                 imgStatus.setImageResource(R.drawable.ic_good)
             }
-            1 -> {
+            2 -> {
                 cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_medium))
                 txtDialogResult.text = "Hasil Prediksi Terkena Kanker : Sedang, Aduhhh Jaga Kesehatan Mu Ya!!!!"
                 imgStatus.setImageResource(R.drawable.ic_warning)
             }
-            2 -> {
+            0 -> {
                 cardContainer.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.level_high))
                 txtDialogResult.text = "Hasil Prediksi Terkena Kanker: Tinggi, Waduh Bahaya Nih, Coba Cek Kesehatan Mu Segera!!!"
                 imgStatus.setImageResource(R.drawable.ic_error)
