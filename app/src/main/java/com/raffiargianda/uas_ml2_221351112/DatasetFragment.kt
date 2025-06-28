@@ -1,4 +1,4 @@
-package com.raffiargianda.uas_ml2_221351112 // Sesuaikan dengan package Anda
+package com.raffiargianda.uas_ml2_221351112
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -85,7 +85,6 @@ class DatasetFragment : Fragment() {
 
         } catch (e: IOException) {
             e.printStackTrace()
-            // GANTI: context -> requireContext()
             Toast.makeText(requireContext(), "Error: Gagal membaca file CSV.", Toast.LENGTH_LONG).show()
         }
     }

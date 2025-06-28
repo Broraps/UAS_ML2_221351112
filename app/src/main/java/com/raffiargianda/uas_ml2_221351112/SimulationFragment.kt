@@ -26,9 +26,7 @@ class SimulationFragment : Fragment() {
     private lateinit var interpreter: Interpreter
     private val mModelPath = "lung_prediction_compatible.tflite"
 
-    private lateinit var resultText: TextView
     private lateinit var checkButton: Button
-    private lateinit var resultCard: CardView
     private lateinit var edtAge: TextInputEditText
     private lateinit var radioGroupGender: RadioGroup
     private lateinit var sliderAirPollution: Slider
@@ -138,14 +136,11 @@ class SimulationFragment : Fragment() {
         )
     }
 
-
     private fun displayResult(resultCode: Int) {
         activity?.runOnUiThread {
             showResultDialog(resultCode)
         }
     }
-
-
 
     private fun initializeViews(view: View) {
         checkButton = view.findViewById(R.id.btnCheck)
