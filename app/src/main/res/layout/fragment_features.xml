@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/card_bg"
+    android:fitsSystemWindows="true"
     tools:context=".FeaturesFragment">
 
     <TextView

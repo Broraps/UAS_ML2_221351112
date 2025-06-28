@@ -42,5 +42,6 @@ class FiturAdapter(private val daftarFitur: List<Fitur>) :
 
         holder.tvDeskripsi.text = spannable
     }
+
     override fun getItemCount() = daftarFitur.size
 }
