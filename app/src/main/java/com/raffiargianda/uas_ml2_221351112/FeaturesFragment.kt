@@ -40,7 +40,7 @@ class FeaturesFragment : Fragment() {
             R.string.diet, R.string.obesity, R.string.smoking, R.string.pasif_smok,
             R.string.chest_pain, R.string.blood_cough, R.string.tiring, R.string.loss_weight,
             R.string.sesak, R.string.mengi, R.string.kesulitan_menelan, R.string.menggiti_jari, R.string.frequent_cold,
-            R.string.dry_cough, R.string.snoring
+            R.string.dry_cough, R.string.snoring, R.string.level
         )
 
         return daftarStringId.map { id ->
