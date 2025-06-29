@@ -25,6 +25,11 @@ class AboutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupDatasetLink(view)
+
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.topAppBar)
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun setupDatasetLink(view: View) {

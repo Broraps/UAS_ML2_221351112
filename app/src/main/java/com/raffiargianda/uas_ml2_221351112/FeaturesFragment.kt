@@ -26,6 +26,11 @@ class FeaturesFragment : Fragment() {
 
         val adapter = FiturAdapter(daftarFitur)
         recyclerView.adapter = adapter
+
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.topAppBar)
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun siapkanData(): List<Fitur> {

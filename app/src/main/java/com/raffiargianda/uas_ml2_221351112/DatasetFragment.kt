@@ -31,6 +31,11 @@ class DatasetFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val tableLayout = view.findViewById<TableLayout>(R.id.tableLayoutDataset)
         populateTableFromCsv(tableLayout)
+
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.topAppBar)
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun populateTableFromCsv(tableLayout: TableLayout) {

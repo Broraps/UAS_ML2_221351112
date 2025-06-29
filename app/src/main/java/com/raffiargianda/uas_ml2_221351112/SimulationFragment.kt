@@ -85,6 +85,11 @@ class SimulationFragment : Fragment() {
         initializeViews(view)
         setupSliderListeners()
         checkButton.setOnClickListener { runPrediction() }
+
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.topAppBar)
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun runPrediction() {

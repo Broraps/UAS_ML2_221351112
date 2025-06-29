@@ -9,15 +9,17 @@
     android:fitsSystemWindows="true"
     tools:context=".AboutFragment">
 
-    <TextView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/brand_teal"
-        android:padding="16dp"
-        android:text="Tentang Aplikasi"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/white"
+        app:title="Tentang Aplikasi"
+        app:titleTextColor="@color/white"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
